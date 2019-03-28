@@ -268,7 +268,7 @@ static AFHTTPSessionManager *_sessionManager;
 + (NSURLSessionTask *)downloadWithURL:(NSString *)URL
                               fileDir:(NSString *)fileDir
                              progress:(PPHttpProgress)progress
-                              success:(void(^)(NSString *))success
+                              success:(void(^)(NSURL *))success
                               failure:(PPHttpRequestFailed)failure {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URL]];
     __block NSURLSessionDownloadTask *downloadTask = [_sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
