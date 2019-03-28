@@ -292,7 +292,7 @@ static AFHTTPSessionManager *_sessionManager;
         
         [[self allSessionTask] removeObject:downloadTask];
         if(failure && error) {failure(error) ; return ;};
-        success ? success(filePath.absoluteString /** NSURL->NSString*/) : nil;
+        success ? success(filePath) : nil;
         
     }];
     //开始下载
